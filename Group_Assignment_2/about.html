@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Index Page Setup + Title-->
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Learnova">
+        <meta name="keywords" content="HTML, CSS, Group, Project, Educational, Technology, EdTech, Company, Learnova">
+        <meta name="author" content="Taya Ford">
+        <title>About | Learnova</title>
+    </head>
+
+<!-- Internal CSS -->
+<style>
+   section, div {
+    font-family: Calibri;
+    }
+
+    td:hover{
+    color: white;
+    background-color: #2f92a4;
+    border: #093c58 solid 2px;
+    }
+
+ </style>
+
+
+
+    <link rel="stylesheet" href="styles/styling.css" />
+
+  <!--Body of HTML Page-->
+    <header>
+    <img src="Image\logo.jpg" alt="Group Photo" width="100" style="float: left;">
+      <h1>Learnova</h1>
+      <h2>About Page</h2>
+
+      <!--Navigation Section-->
+      <nav>
+        <p class="menu"><a href="index.html">Home</a></p>
+        <p class="menu"><a href="jobs.html">Job Positions</a></p>
+        <p class="menu"><a href="apply.html">Apply Here</a></p>
+        <p class="menu"><a href="about.html">About</a></p>
+      </nav>
+    </header>
+
+    <hr>
+
+    <!-- Acknoledgment of Country and Aboriginal and Torres Strait Islander Peoples-->
+    <div>
+        <h3><strong>Acknowledgment to Country</strong></h3>
+        <p>We acknowledge the Traditional Custodians of all the unceded lands,
+        skies and waterways on which we and Swinburne, Swinburne Staff, Students, and all communities come
+        together. We pay our respects to all Ancestors and Elders of Wurundjeri People of the Kulin
+        Nation, where Swinburne University is located.
+        </p>
+    </div>
+
+
+
+    <section>
+        <h3><strong>About Group</strong></h3>
+        <p>Web Page created by Group04</p>
+        <p>Thursday 2:30-4:30pm</p>
+        <p>Authors: Taya Ford, Kai Wigg, Jacob Marulli</p>
+    </section>
+
+    <figure>
+        <img src="Image\group.jpg" alt="Group Photo" width="200">
+        <figcaption>Group04 Image</figcaption>
+    </figure>
+
+    <hr>
+    <div>
+        <dl>
+            <dt><strong>Taya: </strong></h3></dt>
+            <dt>HET IS ZOALS HET IS - IT IS WHAT IT IS</dt>
+            <dt><strong>Index Page</strong></dt>
+            <dd>Created, Edited, Refined and Completed</dd>
+            <dt><strong>About Page</strong></dt>
+            <dd>Created, Edited, Refined and Completed</dd>
+            <dt><strong>CSS</strong></dt>
+            <dd>Created the Index and About page CSS Files</dd>
+            <dd>Edited the Jobs and Apply CSS files to ensure they all were completed correctly and matched</dd>
+            <dd>Added the logos, photos and Animation</dd>
+        </dl>
+
+        <dl>
+            <dt><strong>Kai:</strong></h3></dt>
+            <dt>MILLE VIAE DUCIMT HOMINES PER SAECULA SANGUINEM - A THOUSAND ROADS LEAD MEN THROUGHOUT THE CENTURY IN BLOOD</dt>
+            <dt><strong>Jobs Page</strong></dt>
+            <dd>Created, Edited, Refined and Completed</dd>
+            <dt><strong>CSS</strong></dt>
+            <dd>Created the Jobs CSS Files</dd>
+            <dd>Refined any changed CSS Styles to ensure they all matched up</dd>
+        </dl>
+
+        <dl>
+            <dt><strong>Jacob:</strong></h3></dt>
+            <dt>KIA KAHA KIA NOHO MANAAKITIA - STAY STRONG AND STAY BLESSED</dt>
+            <dt></dt>
+            <dt><strong>Apply Page</strong></dt>
+            <dd>Created, Edited, Refined and Completed</dd>
+            <dt><strong>CSS</strong></dt>
+            <dd>Created the Apply CSS Files</dd>
+            <dd>Refined any changed CSS Styles to ensure they all matched up</dd>
+        </dl>
+    </div>
+
+
+    <hr>
+      <!--Table displaying Future Careers-->
+    <table>
+      <caption>Fun Facts Table</caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Future IT Field</th>
+          <th>Random Fun Fact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Taya Ford</td>
+          <td>Software Development</td>
+          <td> There are several islands in Japan, such as Aoshima, where cats outnumber human residents.</td>
+        </tr>
+        <tr>
+          <td>Kai Wigg</td>
+          <td>Game Development</td>
+          <td>"The Oort cloud is as far away as 2000 times the distance between the Earth and the Sun."</td>
+        </tr>
+        <tr>
+          <td>Jacob Marulli</td>
+          <td>Cybersecurity</td>
+          <td>"Belize is the only national flag on the planet to feature people on it"</td>
+        </tr>
+    </tbody>
+    </table>
+
+    <hr>
+
+      <!--Table displaying info-->
+    <table>
+      <caption>Student Info</caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Student ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Taya Ford</td>
+          <td>106463874</td>
+        </tr>
+        <tr>
+          <td>Kai Wigg</td>
+          <td>106505569</td>
+        </tr>
+        <tr>
+          <td>Jacob Marulli</td>
+          <td>106511359</td>
+        </tr>
+    </tbody>
+    </table>
+
+    <hr>
+
+
+    <footer>
+        <p>© Learnova, 2026</p>
+        <p>Logo, animation, slogan, and name of Learnova are all generated by ChatGPT. All rights reserved.</p>
+        <p>email Learnova At: <a href="mailto:learnova@email.com" title="Learnova Email">learnova@email.com</a></p>
+    </footer>
+</html>
