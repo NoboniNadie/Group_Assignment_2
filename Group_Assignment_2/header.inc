@@ -1,5 +1,5 @@
 <header>
-    <img src="Image\logo.jpg" alt="Group Photo" width="100" style="float: left;">
+    <img src="Image\logo.jpg" alt="Company Logo for Learnova" width="100" style="float: left;">
     <h1>Learnova</h1>
     <h2>Jobs Page</h2>
 

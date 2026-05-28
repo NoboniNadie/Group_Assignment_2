@@ -2,15 +2,18 @@
 filename: styles.css
 authors: Taya Ford, Kai Wigg, and Jacob Marulli
 created: 19/04/2026
-last modified: 20/04/2026
-description: index.html, jobs.html, apply.html, about.html, CSS styles
+last modified: 28/05/2026
+description: index.php, jobs.php, apply.php, about.php, CSS styles
 */
 
-
+* {
+    padding: 1px;
+    margin: 6px;
+}
 
 body, section, div, footer{
     background-color: #fffaf3;
-    }
+}
 
 header, br {
     background-color: #f7eee0;
@@ -21,34 +24,43 @@ footer {
     }
 
 title, h1, h2, h3, h4 { 
-    font-family: Georgia;
+    font-family: Arial, Helvetica, sans-serif;
     color: #093c58; 
     }
 
+h1 {
+    font-weight: 200;
+}
+
+li {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 strong, th {
-    color: #2f92a4; 
-    }
+    color: #00414d; 
+}
 
 table, thead, tbody tr, td, th {
     border: 2px solid #093c58; 
-    }
+}
 
 
 nav p {
-        color: #2f92a4;
-        padding:0.2em 0.6em;
-        display: inline-block;
-        border: #093c58 solid 2px;
-    }  
+    color: #2f92a4;
+    padding:0.2em 0.6em;
+    display: inline-block;
+    border: #093c58 solid 2px;
+}  
 
-nav p:hover{
+nav p:hover {
     color: #2f92a4;
     background-color: #2f92a4;
     border: #093c58 solid 2px;
-    }
-
-
-
+}
 
 form {
     background-color: #f7eee0;
