@@ -41,103 +41,41 @@
 
             <ol>
                 <!--Web Developer Role-->
-                <section>
-                    <h3><li>Web Developer</li></h3>
-                    
-                    <aside>
-                        <h3>A Word from fellow Web Developers:</h3>
-                        <ul>
-                            <li>"The job is as good as it gets. Good benefits, nice offices, and working from home is perfectly allowed."</li>
-                            <li>"It's quite fulfilling to see my work go to such a good worthy cause, no matter how small my part is."</li>
-                        </ul>
-                    </aside>
-
-                    <h3>Reference Number: WD286</h3>
-                    <p>You will develop and code the online environment in which we house the many learning tools we will use. You will also make sure to do general upkeep of the webpages our company uses and hosts.</p>
-                    
-                    <h4><strong>Salary:</strong></h4>
-                    <p>$86,000 - $89,000 / year</p>
-
-                    <h4><strong>Key Responsibilities:</strong></h4>
-                    <ul>
-                        <li>Code and Develop all the relevant and required webpages that our company needs.</li>
-                        <li>Assist in the upkeep and updating of all webpages hosted and the hosting of those webpages.</li>
-                        <li>Develop all the stylesheets used by all webpages.</li>
-                    </ul>
-
-                    <h4><strong>Requirements & Preferences</strong></h4>
-                    <ul>
-                        <li>At least two years of experience in Web Development, especially in HTML, CSS and PHP.</li>
-                        <li>A experience managing webpages and updating them to modern standards.</li>
-                        <li>Preferably have a degree around web development.</li>
-                    </ul>
-                </section>
-
-                <!--Web Designer Role-->
-                <section>
-                    <h3><li>Web Designer</li></h3>
-
-                    <aside>
-                        <h3>A Word from fellow Web Designers:</h3>
-                        <ul>
-                            <li>"The tools and environments you get to design make you feel like you're helping out someone truly learn something."</li>
-                            <li>"Web Design has been my passion for most of my adult-life, so this job is honestly a dream come true."</li>
-                        </ul>
-                    </aside>
-                    
-                    <h3>Reference Number: HY493</h3>
-                    <p>You will design the learning tools, environments and platforms, as well as creating a more inclusive and supportive education service. You will also assist in the stylesheets for the webpages our company hosts.</p>
-                    
-                    <h4><strong>Salary:</strong></h4>
-                    <p>$81,000 - $83,000 / year</p>
-                    
-                    <h4><strong>Key Responsibilities:</strong></h4>
-                    <ul>
-                        <li>Design the tools, platforms and environments webpages will use.</li>
-                        <li>Create more inclusive and supportive educational services that double as being accessible to as many people as possible.</li>
-                        <li>Assist in the creation of webpage stylesheets alongside your Web Developer peers.</li>
-                    </ul>
-
-                    <h4><strong>Requirements & Preferences</strong></h4>
-                    <ul>
-                        <li>At least a years experience in web design and stylesheet creation in HTML and CSS.</li>
-                        <li>Intermediate Planning skills.</li>
-                        <li>A degree around both web development and web design.</li>
-                    </ul>
-                </section>
-
-                <!--Artist Role-->
-                <section>
-                    <h3><li>Artist</li></h3>
-
-                    <aside>
-                        <h3>A Word from fellow Artists:</h3>
-                        <ul>
-                            <li>"It's nice to put what I would be making anyways into the world, especially when it's to grab someone's attention."</li>
-                            <li>"Working here really feels like the kind of team effort a company like this should feel, getting to collaborate with lots of different people from different cultures."</li>
-                        </ul>
-                    </aside>
-
-                    <h3>Reference Number: GV927</h3>
-                    <p>You will create the assets our company will use for the webpages, learning tools, environments and platforms we host.</p>
-                    
-                    <h4><strong>Salary:</strong></h4>
-                    <p>$78,000 - $84,000 / year</p>
-                    
-                    <h4><strong>Key Responsibilities:</strong></h4>
-                    <ul>
-                        <li>Create the assets and images used for the webpages.</li>
-                        <li>Plan and sketch out concept art of webpages for the Web Developers and Designers to utilise as reference.</li>
-                        <li>Be present for consultation on the design of our webpages.</li>
-                    </ul>
-
-                    <h4><strong>Requirements & Preferences</strong></h4>
-                    <ul>
-                        <li>Experience in multiple digital tools and workflows.</li>
-                        <li>Degree in an art field, preferably one that makes accessible designs.</li>
-                        <li>Preferably able to draw in an inviting and friendly style.</li>
-                    </ul>
-                </section>
+                <?php
+                    require_once "settings.php";
+                    $db_conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+                    if ($db_conn) {
+                        $query = "SELECT * FROM jobs";
+                        $result = mysqli_query($db_conn,$query);
+                        if($result) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<section>";
+                            echo "<h3><li>" . $row['job_title'] . "</li></h3>";
+                            echo "<aside>";
+                            echo "<h3>A Word from fellow " . $row['job_title'] . "s:</h3>";
+                            echo "<ul>";
+                            echo $row['word_from'];
+                            echo "</ul>";
+                            echo "</aside>";
+                            echo "<h3>Reference Number: " . $row['reference_no'] . "</h3>";
+                            echo "<p>" . $row['job_description'] . "</p>";
+                            echo "<h4><strong>Salary:</strong></h4>";
+                            echo "<p>" . $row['salary'] . " / year</p>";
+                            echo "<h4><strong>Key Responsibilities:</strong></h4>";
+                            echo "<ul>";
+                            echo $row['responsibilities'];
+                            echo "</ul>";
+                            echo "<h4><strong>Requirements and Preferences:</strong></h4>";
+                            echo "<ul>";
+                            echo $row['reqs_and_prefs'];
+                            echo "</ul>";
+                            echo "</section>";
+                            }
+                        }
+                        mysqli_close($db_conn);
+                    }
+                    else echo "<p>Unable to connect to Database</p>";
+                ?>
             </ol>
         </article>
     <hr>
