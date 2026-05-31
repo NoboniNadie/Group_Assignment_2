@@ -25,6 +25,17 @@
             border-radius: 5px;
             margin: 0.5em;
         }
+    /*Search bar styles*/
+   .search-container {
+       margin: 1em 0.5em
+       display: flex;
+       gap: 0.5em;
+       align-items: center;
+   }
+       
+            
+        
+            
         </style>
     </head>
 
