@@ -21,7 +21,7 @@
         
     
     }
-    
+  ?>   
   
   <!--Body of HTML Page-->
 <body>
@@ -35,7 +35,8 @@
         </ul>
     </aside>
     <!-- Form test and all Job form questions -->
-    <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="POST">
+     <!-- novalidate disables client-side validation, action changed to process_eoi.php -->
+    <form action="process_eoi.php" method="POST" novalidate>
      <strong> <label for="jobRef">Reference number:</label></strong>
     <input type="text" id="jobRef" name="jobRef" 
            pattern="[A-Za-z0-9]{5}" 
@@ -141,31 +142,31 @@
       <fieldset>
        <strong> <legend>Skills: (select at least one)</legend></strong>
         
-        <input type="checkbox" id="html" name="skills" value="html">
+        <input type="checkbox" id="html" name="skills[]" value="html">
         <label for="Html">HTML</label>
         
-        <input type="checkbox" id="css" name="skills" value="css">
+        <input type="checkbox" id="css" name="skills[]" value="css">
         <label for="Css">CSS</label>
         
-        <input type="checkbox" id="javascript" name="skills" value="javascript">
+        <input type="checkbox" id="javascript" name="skills[]" value="javascript">
         <label for="Javascript">JavaScript</label>
         
-        <input type="checkbox" id="php" name="skills" value="php">
+        <input type="checkbox" id="php" name="skills[]" value="php">
         <label for="Php">PHP</label>
         
-        <input type="checkbox" id="python" name="skills" value="python">
+        <input type="checkbox" id="python" name="skills[]" value="python">
         <label for="Python">Python</label>
         
-        <input type="checkbox" id="Sql" name="skills" value="sql">
+        <input type="checkbox" id="Sql" name="skills[]" value="sql">
         <label for="Sql">SQL</label>
 
-        <input type="checkbox" id="Experienced in education" name="skills" value="sql">
+        <input type="checkbox" id="Experienced in education" name="skills[]" value="sql">
         <label for="Experienced in education">Education</label>
     <br><br>
-        <input type="checkbox" id="Swin represent" name="skills" value="sql">
+        <input type="checkbox" id="Swin represent" name="skills[]" value="sql">
         <label for="Swin represent">Went to Swinburne, (instant job)</label>
 
-        <input type="checkbox" id="None" name="skills" value="sql">
+        <input type="checkbox" id="None" name="skills[]" value="sql">
         <label for="None">None, im just applying for fun</label>
     </fieldset>
     <br><br>
