@@ -45,7 +45,7 @@
                 <input type="text"
                 name="search"
                 placeholder="Search jobs"
-                value="<?php echo isset($_GET['search'])? htmlspecialchars($_GET['search']):";?>">
+                value="<?php echo isset($_GET['search'])? htmlspecialchars($_GET['search']) : "; ?>">
             <button type="submit">Search</button>  
             <?php if (!empty($_GET['search'])): ?>
                     <a href="jobs.php">Clear</a>
@@ -60,7 +60,7 @@
                         $search = stripslashes($search);
                         $search = htmlspecialchars($search);
                         $search_safe = mysqli_real_escape_string($db_conn, $search);
-                    $query = "SELECT * FROM jobs"
+                    $query = "SELECT * FROM jobs
                     WHERE job_title LIKE '%$search_safe%' 
                                   OR job_description LIKE '%$search_safe%'
                                   OR salary LIKE '%$search_safe%'
