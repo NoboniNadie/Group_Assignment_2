@@ -55,9 +55,24 @@
                 require_once "settings.php";
                 $db_conn = @mysqli_connect($host,$user,$pwd,$sql_db);
                 if ($db_conn) {
-                    $query = "SELECT * FROM jobs";
+                    if (!empty($_GET['search'])) {
+                        $search = trim($_GET['search']);
+                        $search = stripslashes($search);
+                        $search = htmlspecialchars($search);
+                        $search_safe = mysqli_real_escape_string($db_conn, $search);
+                    $query = "SELECT * FROM jobs"
+                    WHERE job_title LIKE '%$search_safe%' 
+                                  OR job_description LIKE '%$search_safe%'
+                                  OR salary LIKE '%$search_safe%'
+                                  OR reference_no LIKE '%$search_safe%'
+                                  OR responsibilities LIKE '%$search_safe%'
+                                  OR reqs_and_prefs LIKE '%$search_safe%'
+                                  OR word_from LIKE '%$search_safe%'";
+                    } else {
+                        $query = "SELECT * FROM jobs";
+                    }
                     $result = mysqli_query($db_conn,$query);
-                    if($result) {
+                    if($result && mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
                         echo "<section>";
                         echo "<h3>" . $row['job_title'] . "</h3>";
@@ -80,6 +95,12 @@
                         echo $row['reqs_and_prefs'];
                         echo "</ul>";
                         echo "</section>";
+                        }
+                    } else {
+                        if (!empty($_GET['search'])) {
+                            echo "<p class='no-results'>No jobs found matching <strong>" . htmlspecialchars($_GET['search']) . "</strong>. Try a different search term.</p>";
+                        } else {
+                            echo "<p>No jobs currently available.</p>";
                         }
                     }
                     mysqli_close($db_conn);
