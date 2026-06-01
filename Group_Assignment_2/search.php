@@ -62,16 +62,11 @@ if (!isset($_GET['search'])) {
             $search = htmlspecialchars($search);
             $search_safe = mysqli_real_escape_string($db_conn, $search);
 
-            // Search across all fields
-            $query = "SELECT * FROM jobs 
-                      WHERE job_title LIKE '%$search_safe%' 
-                      OR job_description LIKE '%$search_safe%'
-                      OR salary LIKE '%$search_safe%'
-                      OR reference_no LIKE '%$search_safe%'
-                      OR responsibilities LIKE '%$search_safe%'
-                      OR reqs_and_prefs LIKE '%$search_safe%'
-                      OR word_from LIKE '%$search_safe%'";
+            // Search by job title and reference number
 
+            $query = "SELECT * FROM jobs 
+              WHERE job_title LIKE '%$search_safe%' 
+              OR reference_no LIKE '%$search_safe%'";
             $result = mysqli_query($db_conn, $query);
 
             if ($result && mysqli_num_rows($result) > 0) {
